@@ -1,16 +1,47 @@
 import React, { Component } from 'react';
 
-
 class TodoForm extends Component {
+  constructor () {
+    super();
+    this.state = {
+      title: '',
+      responsible: '',
+      description: '',
+      priority: 'low'
+    };
+    this.handleInput = this.handleInput.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleInput(e){
+
+    const { value, name } = e.target;
+    this.setState({
+      [name]:value
+    })
+  }
+
+  handleSubmit(e){
+
+    e.preventDefault();
+    this.props.onAddTodo(this.state);
+
+
+  }
+
+
+
   render() {
     return (
       <div className="card">
-        <form className="card-body">
+        <form  className="card-body" onSubmit={this.handleSubmit}>
           <div className="form-group">
             <input
               type="text"
               name="title"
               className="form-control"
+               value={this.state.title}
+              onChange={ this.handleInput }
               placeholder="Title"
               />
           </div>
@@ -19,6 +50,7 @@ class TodoForm extends Component {
               type="text"
               name="responsible"
               className="form-control"
+              onChange={ this.handleInput }
               placeholder="Responsible"
               />
           </div>
@@ -27,6 +59,7 @@ class TodoForm extends Component {
               type="text"
               name="description"
               className="form-control"
+              onChange={ this.handleInput }
               placeholder="Description"
               />
           </div>
@@ -34,14 +67,15 @@ class TodoForm extends Component {
             <select
                 name="priority"
                 className="form-control"
+                onChange={ this.handleInput }
               >
-              <option>Baja</option>
-              <option>Media</option>
-              <option>Alta</option>
+              <option>low</option>
+              <option>medium</option>
+              <option>high</option>
             </select>
           </div>
           <button type="submit" className="btn btn-primary">
-            Guardar
+            Save
           </button>
         </form>
       </div>
@@ -49,3 +83,5 @@ class TodoForm extends Component {
   }
 
 }
+
+export default TodoForm;
