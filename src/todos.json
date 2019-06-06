@@ -2,23 +2,23 @@
   "todos":[
     {
       "tittle": "Tarea 1",
-      "responsable": "Cesar",
+      "responsible": "Cesar",
       "description": "Lorem Ipsum",
-      "Priority": "Baja"
+      "priority": "Baja"
 
     },
     {
       "tittle": "Tarea 2",
-      "responsable": "Vania",
+      "responsible": "Vania",
       "description": "Lorem Ipsum",
-      "Priority": "Media"
+      "priority": "Media"
 
     },
     {
       "tittle": "Tarea 3",
-      "responsable": "Ryan",
+      "responsible": "Ryan",
       "description": "Lorem Ipsum",
-      "Priority": "Alta"
+      "priority": "Alta"
 
     }
   ]

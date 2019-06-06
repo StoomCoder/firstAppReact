@@ -37,33 +37,32 @@ class App extends Component {
 
   render() {
 
-    const todos = this.state.todos.map((todo, i)=> {
-      return (
-        <div className="col-md-4" key={i}>
+    const todos = this.state.todos.map((todo, i) => {
+        return (
+          <div className="col-md-4" key={i}>
             <div className="card mt-4">
-                <div className="card-header">
-                    <h3>  { todo.tittle }</h3>
-                    <span className="badge badge-pill badge-danger ml-2">
-                                  { todo.Priority }
-                            </span>
-                              </div>
-                    <div className="card-body">
-                        <h3>{todo.description}</h3>
-                        <p><h5>{ todo.responsable }</h5></p>
+              <div className="card-title text-center">
+                <h1>{ todo.tittle }</h1>
+                <span className="badge badge-pill badge-danger ml-2">
+                  {todo.priority}
+                </span>
+              </div>
+              <div className="card-body">
+                {todo.description}
 
-                </div>
-                <div className = "card-footer">
-
-                    <button className = "btn btn-danger"
-                    onClick={this.removeTodo.bind(this,i)}
-                    >Eliminar</button>
-
-                </div>
+                <h3>{todo.responsible}</h3>
+              </div>
+              <div className="card-footer">
+                <button
+                  className="btn btn-danger"
+                  onClick={this.removeTodo.bind(this, i)}>
+                  Delete
+                </button>
+              </div>
             </div>
-        </div>
-
-      )
-    });
+          </div>
+        )
+      });
 
     return (
 

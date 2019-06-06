@@ -4,10 +4,10 @@ class TodoForm extends Component {
   constructor () {
     super();
     this.state = {
-      title: '',
+      tittle: '',
       responsible: '',
       description: '',
-      priority: 'low'
+      priority: 'Baja'
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,6 +25,12 @@ class TodoForm extends Component {
 
     e.preventDefault();
     this.props.onAddTodo(this.state);
+    this.setState({
+      tittle: '',
+      responsible: '',
+      description: '',
+      priority: 'Baja'
+    });
 
 
   }
@@ -38,11 +44,11 @@ class TodoForm extends Component {
           <div className="form-group">
             <input
               type="text"
-              name="title"
+              name="tittle"
               className="form-control"
-               value={this.state.title}
+               value={this.state.tittle}
               onChange={ this.handleInput }
-              placeholder="Title"
+              placeholder="Titulo"
               />
           </div>
           <div className="form-group">
@@ -50,8 +56,9 @@ class TodoForm extends Component {
               type="text"
               name="responsible"
               className="form-control"
+              value={this.state.responsible}
               onChange={ this.handleInput }
-              placeholder="Responsible"
+              placeholder="Responsable"
               />
           </div>
           <div className="form-group">
@@ -59,19 +66,21 @@ class TodoForm extends Component {
               type="text"
               name="description"
               className="form-control"
+              value={this.state.description}
               onChange={ this.handleInput }
-              placeholder="Description"
+              placeholder="Descripcion"
               />
           </div>
           <div className="form-group">
             <select
                 name="priority"
                 className="form-control"
+                value={this.state.priority}
                 onChange={ this.handleInput }
               >
-              <option>low</option>
-              <option>medium</option>
-              <option>high</option>
+              <option>Baja</option>
+              <option>Media</option>
+              <option>Alta</option>
             </select>
           </div>
           <button type="submit" className="btn btn-primary">
