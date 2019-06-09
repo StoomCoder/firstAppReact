@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './TodoForm.css';
 
 class TodoForm extends Component {
   constructor () {
@@ -39,7 +40,7 @@ class TodoForm extends Component {
 
   render() {
     return (
-      <div className="card">
+      <div className="card col-12 col-md-12 ">
         <form  className="card-body" onSubmit={this.handleSubmit}>
           <div className="form-group">
             <input
@@ -78,15 +79,17 @@ class TodoForm extends Component {
                 value={this.state.priority}
                 onChange={ this.handleInput }
               >
-              <option>Baja</option>
-              <option>Media</option>
-              <option>Alta</option>
+              <option className="alert alert-primary">Baja</option>
+              <option className="alert alert-warning">Media</option>
+              <option className="alert alert-danger">Alta</option>
             </select>
           </div>
-          <button type="submit" className="btn btn-primary">
-            Save
+          <button type="submit" className="btn btn-outline-primary">
+            Guardar
           </button>
         </form>
+
+
       </div>
     )
   }
