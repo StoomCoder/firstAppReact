@@ -87,8 +87,6 @@ class TodoForm extends Component {
             Save
           </button>
         </form>
-
-
       </div>
     )
   }
